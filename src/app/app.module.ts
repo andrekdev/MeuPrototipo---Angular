@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 //em caso de rotas tende importar aqui
 import { RouterModule} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'; // Importe o HttpClientModule aqui
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './navegacao/menu/menu.component';
@@ -12,6 +13,8 @@ import { ContatoComponent } from './institucional/contato/contato.component';
 import { rootRouterConfig } from './app.routes';
 import { APP_BASE_HREF } from '@angular/common';
 import { DataBindingComponent } from './demos/data-binding/data-binding.component';
+import { ProdutoService } from './produtos/produtos.service';
+import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.component';
 
 @NgModule({
   declarations: [
@@ -21,18 +24,21 @@ import { DataBindingComponent } from './demos/data-binding/data-binding.componen
     HomeComponent,
     SobreComponent,
     ContatoComponent,
-    DataBindingComponent
+    DataBindingComponent,
+    ListaProdutoComponent,
+    
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     //e aqui
     [RouterModule.forRoot(rootRouterConfig,{useHash: false})]
   ],
   providers: [
-    {
-      //define uma rota pemanente
-      provide: APP_BASE_HREF, useValue: '/'
-    }
+    
+    ProdutoService,
+    //define uma rota pemanente
+    {provide: APP_BASE_HREF, useValue: '/'}
   ],
   bootstrap: [AppComponent]
 })

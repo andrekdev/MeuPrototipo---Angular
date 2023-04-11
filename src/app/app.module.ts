@@ -3,7 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 //em caso de rotas tende importar aqui
 import { RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; // Importe o HttpClientModule aqui
-
+//Valor de moeda
+import { registerLocaleData } from '@angular/common';
+import  localePt from '@angular/common/locales/pt'
+registerLocaleData(localePt)
 import { AppComponent } from './app.component';
 import { MenuComponent } from './navegacao/menu/menu.component';
 import { FooterComponent } from './navegacao/footer/footer.component';

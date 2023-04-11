@@ -8,6 +8,7 @@ import { ProdutoService } from '../produtos.service';
   templateUrl: './lista-produto.component.html'
 })
 export class ListaProdutoComponent implements OnInit {
+symbol: string|boolean;
 
   constructor(private produtoService: ProdutoService) { }
 

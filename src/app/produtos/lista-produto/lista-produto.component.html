@@ -11,12 +11,17 @@
                         <img src="/assets/{{produto.imagem}}" height="164px" width="253px" alt="">
                     </div>
                 </a>
-                <!--pegando igual um array-->
-                <h4 class="card-title">{{produto.nome}}</h4>
+                <!--pegando igual um array
+                
+                titlecase deixa todos os iniciais maiusculo
+                -->
+
+                <h4 class="card-title">{{produto.nome | titlecase}}</h4>
 
                 <div>
                     <p>Promoção!</p>
-                    <p>Por apenas: {{produto.valor}}</p>
+                    <!--valor da moeda-->
+                    <p>Por apenas: {{produto.valor | currency: 'BRL':symbol:'1.2-2':'pt'}}</p>
                 </div>
 
                 <div class="card-body">

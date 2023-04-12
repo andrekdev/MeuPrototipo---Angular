@@ -11,30 +11,24 @@
                         <img src="/assets/{{produto.imagem}}" height="164px" width="253px" alt="">
                     </div>
                 </a>
-                <!--pegando igual um array
-                
-                titlecase deixa todos os iniciais maiusculo
-                -->
+                <h4 class="card-title">{{ produto.nome | titlecase }}</h4>
 
-                <h4 class="card-title">{{produto.nome | titlecase}}</h4>
-
-                <div>
-                    <p>Promoção!</p>
-                    <!--valor da moeda-->
-                    <p>Por apenas: {{produto.valor | currency: 'BRL':symbol:'1.2-2':'pt'}}</p>
+                <div [ngSwitch]="produto.promocao">
+                    <!--caso a promoção for true faça isso, senão isso-->
+                    <p *ngSwitchCase="true">Promoção!</p>
+                    <p *ngSwitchCase="false">Por apenas:</p>
                 </div>
 
-                <div class="card-body">
+                <div *ngIf="produto.promocao" class="card-body">
                     <div><h4 class="card-text">De:
-                        <small><del></del></small>
-                        Por: 
+                        <small><del>{{ produto.valor | currency:'BRL':true:'1.2-2':'pt' }}</del></small>
+                        Por: {{ produto.valorPromo | currency:'BRL':true:'1.2-2':'pt' }}
                     </h4></div>
                 </div>
 
-                <div class="card-body">
-                    <div><h4></h4></div>
+                <div *ngIf="!produto.promocao" class="card-body">
+                    <div><h4>{{ produto.valor | currency:'BRL':true:'1.2-2':'pt' }}</h4></div>
                 </div>
-
                 <div class="card-footer">
                     <a class="btn btn-primary">
                         <span class="fa fa-shopping-cart"></span> Comprar

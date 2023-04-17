@@ -1,27 +1,20 @@
 # MeuPrototipo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
 
-## Development server
+Projeto criado com [Angular CLI](https://github.com/angular/angular-cli) versão 15.2.4.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Run
 
-## Code scaffolding
+Digite json-server --watch produtos.json
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Digite `ng s` e vá para o `http://localhost:4200/`. 
 
-## Build
+## Dependencias
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Instale o angular: `npm install  -g @angular/cli` 
 
-## Running unit tests
+Instale o node: [node](https://nodejs.org/en/download) 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Instale o Json-Server: `npm i json-server`
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
